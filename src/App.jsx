@@ -24,7 +24,7 @@ function App() {
   return (
     //markup
     <>
-      <h1>Ricette tradizionali</h1>
+      <h1 className='text-center p-3'>Ricette tradizionali</h1>
       <div className="container">
         <div className="row">
 
