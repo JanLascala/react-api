@@ -29,10 +29,15 @@ function App() {
         <div className="row">
 
           {posts.map(post => (
-            <div className="col-12" key={`post-${post.slug}`}>
-              <h3>{post.title}</h3>
-              <img src={post.image} alt={post.image} />
-              <div>
+            <div className="col-12 d-flex justify-content-center align-items-center" key={`post-${post.slug}`}>
+
+              <div className='p-3'>
+
+                <img src={post.image} alt={post.image} />
+
+              </div>
+              <div className='p-3'>
+                <h3>{post.title}</h3>
                 <p>{post.content}</p>
 
               </div>
