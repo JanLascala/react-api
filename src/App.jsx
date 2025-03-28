@@ -17,7 +17,7 @@ function App() {
       .then(res => res.json())
       .then(data => {
         console.log(data)
-        setPosts(data.results)
+        setPosts(data)
       })
       .catch(err => console.error('Error fetching data:', err));
   }
@@ -38,6 +38,7 @@ function App() {
               </div>
             </div>))
           }
+
 
         </div>
       </div>
