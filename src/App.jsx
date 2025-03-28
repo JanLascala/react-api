@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 const api_posts = 'http://localhost:3000/api/v1/posts';
 
 function App() {
+  const [posts, setPosts] = useState([])
 
   //this is to not repeat ad infinitum
   useEffect(() => {
@@ -16,6 +17,7 @@ function App() {
       .then(res => res.json())
       .then(data => {
         console.log(data)
+        setPosts(data.results)
       })
       .catch(err => console.error('Error fetching data:', err));
   }
@@ -25,14 +27,18 @@ function App() {
       <h1>Ricette tradizionali</h1>
       <div className="container">
         <div className="row">
-          <div className="col-12">
-            <h3>title</h3>
-            <img src="" alt="" /><span>here the img</span>
-            <div>
-              <p>description</p>
-              <p>tags</p>
-            </div>
-          </div>
+
+          {posts.map(post => (
+            <div className="col-12" key={`post-${post.slug}`}>
+              <h3>{post.title}</h3>
+              <img src={post.image} alt={post.image} />
+              <div>
+                <p>{post.content}</p>
+
+              </div>
+            </div>))
+          }
+
         </div>
       </div>
     </>
