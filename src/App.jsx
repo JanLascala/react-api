@@ -33,12 +33,15 @@ function App() {
 
               <div className='p-3'>
 
-                <img src={post.image} alt={post.image} />
+                <img className='food_pics' src={post.image} alt={post.image} />
 
               </div>
-              <div className='p-3'>
+              <div className='p-3 bg-secondary border border-warning text-light'>
                 <h3>{post.title}</h3>
                 <p>{post.content}</p>
+                <button type="button" class="btn btn-lg btn-outline-danger bg-danger text-light">
+                  <i class="bi bi-trash-fill"></i>
+                </button>
 
               </div>
             </div>))

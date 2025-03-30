@@ -1,2 +1,7 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
+
+.food_pics {
+    height: 300px;
+    width: 450px;
+}
