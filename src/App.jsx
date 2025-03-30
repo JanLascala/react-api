@@ -21,6 +21,10 @@ function App() {
       })
       .catch(err => console.error('Error fetching data:', err));
   }
+  function CancelPost(slug) {
+    const updatedposts = posts.filter(post => post.slug !== slug);
+    setPosts(updatedposts);
+  }
   return (
     //markup
     <>
@@ -39,9 +43,11 @@ function App() {
               <div className='p-3 bg-secondary border border-warning text-light'>
                 <h3>{post.title}</h3>
                 <p>{post.content}</p>
-                <button type="button" class="btn btn-lg btn-outline-danger bg-danger text-light">
+                <button type="button"
+                  class="btn btn-lg btn-outline-danger bg-danger text-light"
+                  onClick={() => CancelPost(post.slug)}>
                   <i class="bi bi-trash-fill"></i>
-                </button>
+                </button >
 
               </div>
             </div>))
